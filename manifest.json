@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+
+  "name": "贴吧工具",
+  "description": "1.清除广告 2.清除不喜欢的模块 3.解决未登录不能翻页、只看楼主",
+  "version": "1.0",
+
+  "content_scripts": [
+    {
+      "matches": ["http://tieba.baidu.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
