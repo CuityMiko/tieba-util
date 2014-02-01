@@ -12,12 +12,49 @@
       talkContent: true, // 是否隐藏访谈内容预览
       listPost: true, // 是否隐藏吧友讨论预览
       starHead: true, // 是否隐藏明星贴吧头部图片预览
+      headGame: true, // 是否隐藏头部游戏广告
+      headTopic: true, // 顶部话题预览
+      lotWrap: true, // 右侧彩票广告
+      headAd: true, // 看帖时头部广告
+      union_mod: true, // 右侧广告
+      game_spread_thread: true, // 贴吧游戏推荐广告
+      ueg_policy_open: true, // 右侧举报统计
+      rich_rank_mod: true, // 右侧T豆
+      sign_mod: true // 右侧签到
+      
     };
   
   // 通过新建样式表，隐藏广告、不需要的模块
   util.hiddenItems = function () {
     var rules = "";
     
+    if (options.sign_mod) {
+      rules += "\n#sign_mod { display: none !important; }";
+    } // end if
+    if (options.rich_rank_mod) {
+      rules += "\n.rich_rank_mod { display: none !important; }";
+    } // end if
+    if (options.ueg_policy_open) {
+      rules += "\n#ueg_policy_open { display: none !important; }";
+    } // end if
+    if (options.game_spread_thread) {
+      rules += "\n.game_spread_thread { display: none !important; }";
+    } // end if
+    if (options.union_mod) {
+      rules += "\n#union_mod { display: none !important; }";
+    } // end if
+    if (options.headAd) {
+      rules += "\n#pb_adbanner { display: none !important; }";
+    } // end if
+    if (options.lotWrap) {
+      rules += "\n.lot_wrap { display: none !important; }";
+    } // end if
+    if (options.headTopic) {
+      rules += "\n#topic_thread_wrapper { display: none !important; }";
+    } // end if
+    if (options.headGame) {
+      rules += "\n.game_frs_step1 { display: none !important; }";
+    } // end if
     if (options.starHead) {
       rules += "\n.star_head { display: none !important; }";
     } // end if
