@@ -1,4 +1,4 @@
-
+﻿
 (function (){
   var doc = document,
     w = window,
@@ -20,14 +20,17 @@
       game_spread_thread: true, // 贴吧游戏推荐广告
       ueg_policy_open: true, // 右侧举报统计
       rich_rank_mod: true, // 右侧T豆
-      sign_mod: true // 右侧签到
-      
+      sign_mod: true, // 右侧签到
+      lottery: true // 楼层之间彩票广告
     };
   
   // 通过新建样式表，隐藏广告、不需要的模块
   util.hiddenItems = function () {
     var rules = "";
     
+    if (options.lottery) {
+      rules += "\n.pb_lecai_iframe { display: none !important; }";
+    } // end if
     if (options.sign_mod) {
       rules += "\n#sign_mod { display: none !important; }";
     } // end if
